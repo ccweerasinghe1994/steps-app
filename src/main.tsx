@@ -9,6 +9,7 @@ import HomePage from './pages/Home/Home.page';
 import NotFound from './pages/NotFound/NotFound.page';
 import AboutPage from './pages/About/About.page';
 import LoginPage from './pages/Login/Login.page';
+import { StrictMode } from 'react';
 
 export enum Routes {
 	Home = '/home',
@@ -43,7 +44,10 @@ export const CustomRouter = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<Provider store={store}>
-		<RouterProvider router={CustomRouter} />
-	</Provider>,
+	<StrictMode>
+		<Provider store={store}>
+			<RouterProvider router={CustomRouter} />
+		</Provider>
+		,
+	</StrictMode>,
 );
